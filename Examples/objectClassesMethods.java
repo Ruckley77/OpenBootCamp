@@ -9,6 +9,13 @@ public class objectClassesMethods {
         System.out.println(car.speedCurrent);
         car.deaccerate();
         System.out.println(car.speedCurrent);
+
+        Car car2 = new Car();
+        System.out.println(car2.speedCurrent);
+        car2.accelerate(); // Methods are functions within classes
+        System.out.println(car2.speedCurrent);
+        car2.deaccerate();
+        System.out.println(car2.speedCurrent);
     }
 }
 
@@ -19,10 +26,10 @@ class Car {
     int speedMax;
     float speedCurrent;
 
-    //Constructor initializes First also, this one has Parameters
-    public Car(int Doors, int Speed){
-        doorNumber = Doors;
-        speedCurrent = Speed;
+    //Constructor initializes First. Also, this one has Parameters
+    public Car(int doorNumber, int speedCurrent){
+        this.doorNumber = doorNumber;  //this. allows you to refer back to that parameter and assign it a value
+        this.speedCurrent = speedCurrent;
         System.out.println("Constructing Mode Paremeters Included");
     }
     // Constructor with no Parameters
