@@ -1,4 +1,5 @@
-public class App {
+package Examples;
+public class Conditional {
     public static void main(String[] args) throws Exception {
         String estacion = "Verano";
 

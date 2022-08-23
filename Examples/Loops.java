@@ -1,4 +1,5 @@
-public class App {
+package Examples;
+public class Loops {
     public static void main(String[] args) throws Exception {
         int contadorw = 1;
         int contadordo = 100;

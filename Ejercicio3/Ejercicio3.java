@@ -1,4 +1,4 @@
-public class App {
+public class Ejercicio3 {
     public static void main(String[] args) throws Exception {
         suma(19,23,35);
         Coche miCoche = new Coche();
