@@ -17,6 +17,9 @@ public class objectPrivateSettersGetters{
         Polygons square = new Polygons();
         Polygons pentagon = new Polygons();
 
+        Fruits apple = new Fruits();
+        Fruits grapes = new Fruits();
+
         human.setType("Human");   //Giving value to object.property through function set
         tiger.setType("Tiger");
         turtle.setType("Turtle");
@@ -31,6 +34,9 @@ public class objectPrivateSettersGetters{
         square.setPolygon("Square");
         pentagon.setPolygon("Pentagon");
 
+        apple.setFruit("Apple");
+        grapes.setFruit("Grapes");
+
         System.out.println(human.getType()); //getting the value from the function get
         System.out.println(tiger.getType());
         System.out.println(turtle.getType());
@@ -44,6 +50,9 @@ public class objectPrivateSettersGetters{
         System.out.println(triangle.getPolygon());
         System.out.println(square.getPolygon());
         System.out.println(pentagon.getPolygon());
+
+        System.out.println(apple.getFruit());
+        System.out.println(grapes.getFruit());
     }
 }
 
@@ -99,5 +108,17 @@ class Polygons {
 
     public String getPolygon(){
         return this.polygon;
+    }
+}
+
+class Fruits {
+    private String fruit;
+
+    public void setFruit(String fruit){
+        this.fruit = fruit;
+    }
+
+    public String getFruit(){
+        return this.fruit;
     }
 }
