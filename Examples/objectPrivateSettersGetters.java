@@ -23,12 +23,20 @@ public class objectPrivateSettersGetters{
         Games dota = new Games();
         Games kaizen = new Games();
 
-        human.setType("Human");   //Giving value to object.property through function set
+        human.setType("Alberto");   //Giving value to object.property through function set
         tiger.setType("Tiger");
         turtle.setType("Turtle");
 
-        number.setNumber(3);
-        number2.setNumber(4);
+        human.setAlive(true);
+        tiger.setAlive(false);
+        turtle.setAlive(true);
+
+        human.setAge(60);
+        tiger.setAge(30);
+        turtle.setAge(200);
+
+        number.setNumber(8000);
+        number2.setNumber(4000);
 
         black.setColor("Black");
         red.setColor("Red");
@@ -46,6 +54,15 @@ public class objectPrivateSettersGetters{
         System.out.println(human.getType()); //getting the value from the function get
         System.out.println(tiger.getType());
         System.out.println(turtle.getType());
+        
+
+        System.out.println(human.isAlive());
+        System.out.println(tiger.isAlive());
+        System.out.println(turtle.isAlive());
+
+        System.out.println(human.getAge());
+        System.out.println(tiger.getAge());
+        System.out.println(turtle.getAge());
 
         System.out.println(number.getNumber());
         System.out.println(number2.getNumber());
@@ -65,18 +82,38 @@ public class objectPrivateSettersGetters{
     }
 }
 
-class Animal{
+class Animal {
 
     private String type; //Define private property
+    private Boolean alive;
+    private int age;
 
     public void setType(String type){  // Function Setter defined. Caps on name of Property
 
         this.type = type;      //this.  property = parameter
     }
 
+    public void setAlive(Boolean alive){
+        this.alive = alive;
+    }
+
+    public void setAge(int age){
+        this.age = age;
+    }
+
     public String getType(){  // Function Getter defined to return this.
         return this.type;
     }
+
+    public int getAge(){
+        return this.age;
+    }
+
+    public Boolean isAlive(){
+        return this.alive;
+    }
+
+    
 }
 
 
