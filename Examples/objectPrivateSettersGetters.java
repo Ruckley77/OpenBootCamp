@@ -20,6 +20,9 @@ public class objectPrivateSettersGetters{
         Fruits apple = new Fruits();
         Fruits grapes = new Fruits();
 
+        Games dota = new Games();
+        Games kaizen = new Games();
+
         human.setType("Human");   //Giving value to object.property through function set
         tiger.setType("Tiger");
         turtle.setType("Turtle");
@@ -37,6 +40,9 @@ public class objectPrivateSettersGetters{
         apple.setFruit("Apple");
         grapes.setFruit("Grapes");
 
+        dota.setGame("Dota 2");
+        kaizen.setGame("Kaizen game");
+
         System.out.println(human.getType()); //getting the value from the function get
         System.out.println(tiger.getType());
         System.out.println(turtle.getType());
@@ -53,6 +59,9 @@ public class objectPrivateSettersGetters{
 
         System.out.println(apple.getFruit());
         System.out.println(grapes.getFruit());
+
+        System.out.println(dota.getGame());
+        System.out.println(kaizen.getGame());
     }
 }
 
@@ -120,5 +129,19 @@ class Fruits {
 
     public String getFruit(){
         return this.fruit;
+    }
+}
+
+
+class Games {
+
+    private  String game;
+
+    public void setGame(String game){
+        this.game = game;
+    }
+
+    public String getGame(){
+        return this.game;
     }
 }
