@@ -1,4 +1,4 @@
-package Examples;
+package Examples.Objects;
 
 public class arrayObjects {
     public static void main(String[] args) {

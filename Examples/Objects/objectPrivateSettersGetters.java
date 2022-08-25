@@ -1,4 +1,4 @@
-package Examples;
+package Examples.Objects;
 
 public class objectPrivateSettersGetters{
     public static void main(String[] args) {

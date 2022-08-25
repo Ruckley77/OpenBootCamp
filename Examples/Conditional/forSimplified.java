@@ -1,4 +1,4 @@
-package Examples;
+package Examples.Conditional;
 
 public class forSimplified {
     public static void main(String[] args) throws Exception {
