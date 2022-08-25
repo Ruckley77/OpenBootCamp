@@ -1,4 +1,6 @@
-public class Ejercicio4 {
+package EjercicioTema4;
+
+public class ejercicioTema4 {
     public static void main(String[] args) throws Exception {
         var estacion = "0"; 
 

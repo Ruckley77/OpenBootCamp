@@ -1,6 +1,6 @@
-package Ejercicio5;
+package EjercicioTema8;
 
-public class Ejercicio5 {
+public class ejercicioTema8 {
     public static void main(String[] args) throws Exception {
     
         Persona persona = new Persona();

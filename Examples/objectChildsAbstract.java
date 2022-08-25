@@ -50,10 +50,6 @@ class Kar extends Vehicle{
     }
 }
 
-class Coupe extends Kar{
-
-}
-
 class Motorcycle extends Vehicle{
 
     public void setSound(String sound){
@@ -62,4 +58,8 @@ class Motorcycle extends Vehicle{
     public String getSound(){
         return "I'm a Motorcycle " + this.sound;
     }
+}
+
+class Coupe extends Kar{
+
 }
