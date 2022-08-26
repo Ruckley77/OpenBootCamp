@@ -1,4 +1,4 @@
-package Examples.Objects;
+package Examples.Objects.inheritanceInterfacesAbstracts;
 
 public class objectChildsAbstract {
 

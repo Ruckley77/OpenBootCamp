@@ -1,4 +1,4 @@
-package Examples.Objects;
+package Examples.Objects.methodsGettersSetters;
 
 public class arrayObjects {
     public static void main(String[] args) {
