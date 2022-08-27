@@ -16,17 +16,18 @@ public class objectInterfacesMultipleInheritance {
         CheckMembership(noMember);
         
     }
-
+    // When a method's parameter its an object, its called by reference, meaning it will modify the original value.
     public static void ExecuteGas(Transportation transportation){ // Parameter of this function 
                                                                   // will be a class that implements that interface
-        transportation.Gas(15);
+
+        transportation.Gas(15);                         
     }
 
     public static void CheckMembership(Users user){
         
         user.Name("Pablito ");
         user.Membership("Divine Plus Member");
-        user.Paid(true);
+        user.Paid(false);
     }
 }
 
