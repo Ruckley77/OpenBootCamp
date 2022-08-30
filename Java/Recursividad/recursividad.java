@@ -1,4 +1,4 @@
-package Examples.Objects.Recursividad;
+package Java.Recursividad;
 
 public class recursividad {
     public static void main(String[] args) throws Exception {

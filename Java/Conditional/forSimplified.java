@@ -1,4 +1,4 @@
-package Examples.Conditional;
+package Java.Conditional;
 
 public class forSimplified {
     public static void main(String[] args) throws Exception {

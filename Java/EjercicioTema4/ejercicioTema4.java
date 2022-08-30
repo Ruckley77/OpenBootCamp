@@ -1,4 +1,4 @@
-package EjercicioTema4;
+package Java.EjercicioTema4;
 
 public class ejercicioTema4 {
     public static void main(String[] args) throws Exception {

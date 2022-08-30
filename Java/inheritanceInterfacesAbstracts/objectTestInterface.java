@@ -1,4 +1,4 @@
-package Examples.Objects.inheritanceInterfacesAbstracts;
+package Java.inheritanceInterfacesAbstracts;
 
 public class objectTestInterface {
     public static void main(String[] args) throws Exception {

@@ -1,4 +1,4 @@
-package Examples.Conditional;
+package Java.Conditional;
 public class Conditional {
     public static void main(String[] args) throws Exception {
         String estacion = "Verano";

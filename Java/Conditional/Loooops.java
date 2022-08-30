@@ -1,4 +1,4 @@
-package Examples.Conditional;
+package Java.Conditional;
 public class Loooops {
     public static void main(String[] args) throws Exception {
         int contadorw = 1;
