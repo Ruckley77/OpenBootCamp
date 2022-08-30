@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.image-paisaje {
+    width: 100%;
+    opacity: 0.5;
+}
+
+.image-paisaje:hover{
+    opacity: 1;
+}
+
+.image-gallery {
+    width: 250px;
+    opacity: 0.5;
+}
+
+.image-gallery:hover {
+    opacity: 1;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
