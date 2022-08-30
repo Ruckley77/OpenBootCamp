@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+}
+/* https://www.w3schools.com/css/css_pseudo_elements.asp */
+.container {
+    width: 300px;
+    height: 100px;
+    background-color: aquamarine;
+}
+
+
+span.phrase {
+    font-style: italic;
+}
+
+span.phrase::before{
+    content: '<<';
+    font-size: xx-small;
+}
+
+span.phrase::after{
+    content: '>>';
+    font-size: xx-small;
+}
+
+.book {
+    background-color: bisque;
+    padding: 15px;
+    font-family: Arial;
+}
+
+.book p::first-letter {
+    font-size: xx-large;
+}
+
+.book p::first-line {
+    color: brown;
+}
+
+.book p::selection {
+    background-color: green;
+    color: blueviolet;
+}
+
+.list ul li::marker {
+    color: chartreuse;
+}

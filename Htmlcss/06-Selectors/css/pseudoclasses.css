@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* https://www.w3schools.com/css/css_pseudo_classes.asp */
+.hover {
+    width: 300px;
+    height: 100px;
+    background-color: bisque;
+}
+
+.hover:hover {
+    background-color: burlywood;
+}
+
+.list {
+    padding: 15px;
+    background-color: aquamarine;
+}
+
+.list p:first-child {
+    color: blueviolet;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: crimson;
+}
+
+a:hover {
+    color: chocolate;
+}
+
+a:active {
+    color: green;
+}
