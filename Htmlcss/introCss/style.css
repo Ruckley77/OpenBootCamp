@@ -1,0 +1,25 @@
+h1 {
+    color: red;
+}
+
+p {
+    color: blue;
+    font-size: 16pt;
+}
+
+#firstnews {
+    color: green;
+}
+
+.newsHeader {
+    font-size: 24pt;
+    text-transform: uppercase;
+}
+
+*.warning {
+    color: red;
+}
+
+.author, .date, .location, h1, #firstnews{
+    text-decoration: underline;
+}
