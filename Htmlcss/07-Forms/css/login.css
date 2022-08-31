@@ -127,14 +127,25 @@ label span {
     font-weight: 700;
 }
 
+.section-inputs label input {
+    width: 80%;
+    background-color: #212121;
+    border: solid 1px transparent;
+    padding: 10px 20px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14pt;
+    color: white;
+}
+
 label input {
-    width: 100%;
+    width: 92%;
     background-color: #212121;
     border: none;
     padding: 10px 20px;
     border-radius: 7px;
     outline: none;
-    font-size: 15px;
+    font-size: 15pt;
     transition: background-color 0.2s, border 0.2, box-shadow 0.2s;
 }
 
