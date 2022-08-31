@@ -1,0 +1,45 @@
+.father {
+    width: 400px;
+    height: 400px;
+    background-color: aqua;
+}
+
+.child {
+    width: 50%;
+    height: 50%;
+    background-color: pink;
+    animation: traslation 2s infinite forwards alternate;
+    /* transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55); */
+}
+
+.father:hover .child {
+    /* transform: translateX(100%);
+    background-color: blueviolet; */
+    animation-play-state: paused;
+}
+
+
+@keyframes traslation {
+    0% {
+        background-color: chartreuse;
+        transform: translateX(0%);
+    }
+
+    25% {
+        transform: translateX(100%);
+    }
+
+    50% {
+        background-color: brown;
+        transform: translateX(100%) translateY(100%);
+    }
+
+    75% {
+        transform: translateX(0%) translateY(100%);
+    }
+
+    100% {
+        background-color: deeppink;
+        transform: translateX(0%) translateY(0%);
+    }
+}
