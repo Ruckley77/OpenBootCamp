@@ -10,7 +10,7 @@ html{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 25%;
+    margin: 310px auto;
     width: 700px;
     height:500px;
     gap: 40px;
