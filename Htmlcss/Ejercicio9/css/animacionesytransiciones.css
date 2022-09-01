@@ -20,7 +20,7 @@ body{
 
 .btn-modern:hover {
     transform: translateY(-5px);
-    box-shadow: 2px 2px 2px gray;
+    box-shadow: 2px 2px 2px rgb(33, 42, 85);
     background-color: blue;
     color: whitesmoke;
 }
