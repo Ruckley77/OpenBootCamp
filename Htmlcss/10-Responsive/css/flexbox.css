@@ -1,0 +1,27 @@
+.container {
+    background-color: green;
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    min-height: 5rem;
+
+    /* main axis */
+    justify-content: space-around;
+
+    /* secondary axis */
+    align-items: center; /* baseline center end */
+
+    /* flex-direction: column; */
+
+    flex-wrap: wrap;
+}
+
+.item {
+    background-color: aqua;
+    padding: 0.25rem;
+    width: 10rem;
+}
+
+.item-2 {
+    align-self: stretch;
+}

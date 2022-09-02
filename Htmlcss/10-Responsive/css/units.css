@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 20px;
+}
+
+.scene {
+    margin: 10px 0px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.scene-1 {
+    width: 100%;
+}
+
+.scene-2 {
+    width: 50%;
+}
+
+.unit-px {
+    background-color: green;
+    width: 200px;
+}
+
+.unit-percentage {
+    background-color: red;
+    width: 50%;
+}
+
+.unit-view {
+    background-color: yellow;
+    width: 50vw;
+}

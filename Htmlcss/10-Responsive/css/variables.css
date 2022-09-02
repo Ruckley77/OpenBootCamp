@@ -1,0 +1,20 @@
+:root {
+    --color-main: rgb(0, 255, 191);
+    --width-main: 250px;
+}
+
+
+.title {
+    color: var(--color-main)
+}
+
+
+.footer {
+    color: var(--color-main)
+}
+
+.container {
+    background-color: antiquewhite;
+    padding: 1rem;
+    max-width: var(--width-main);
+}
