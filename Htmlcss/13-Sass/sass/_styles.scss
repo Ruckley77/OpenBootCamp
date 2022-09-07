@@ -1,0 +1,41 @@
+@use '../sass/mixins';
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    background-color: azure;
+    min-height: 100vh;
+    padding: 0.5rem;
+}
+
+
+h1 {
+    margin: 0;
+    @include mixins.text-format();
+}
+
+p {
+    @include mixins.text-format(#666);
+}
+
+
+.list {
+    width: 10rem;
+    background-color: aquamarine;
+    padding: 0.5rem;
+
+    ul {
+        margin: 0 0.5rem;
+
+        li {
+            list-style: none;
+            &:hover {
+                color:red;
+            }
+        }
+    }
+}

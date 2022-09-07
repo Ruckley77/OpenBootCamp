@@ -1,0 +1,85 @@
+@use "sass:string";
+@use "sass:math";
+@use "sass:list";
+@use "sass:selector";
+@use "sass:color";
+
+//String Functions
+
+@debug "hola";
+@debug string.index("Helvetica Neue", "Neue");
+
+$string: "Helvetica";
+$newString: string.insert($string, " Bold", 10);
+
+@debug $newString;
+@debug string.length($newString);
+
+
+@debug string.to-upper-case("Roboto Mono");
+
+
+@debug string.unique-id();
+
+// Number functions
+@debug math.$e;
+@debug math.$pi;
+
+@debug math.ceil(4.2);
+@debug math.floor(4.2);
+@debug math.round(4.6);
+
+@debug math.clamp(0,6,10);
+
+
+@debug math.max(3, 5, 6 , 78);
+
+@debug math.abs(-8);
+
+@debug math.pow(2,6);
+
+
+///list functions
+
+$list1: 10px, 10px, 0px, 15px;
+
+@debug $list1;
+
+@debug list.append($list1, 25px);
+@debug list.append($list1, 25px, space);
+
+$border-custom: solid 1px #ccc;
+@debug list.index($border-custom, 1px); // returns 2.
+
+
+// $border-2: [solid 1px #ccc];
+// @debug list.is-bracketed($border-2);
+
+@debug list.join($list1, $border-custom, auto);
+@debug list.length(list.join($list1, $border-custom, auto));
+@debug list.separator($border-custom);
+@debug list.separator(list.join($list1, $border-custom, auto));
+
+// Selector Functions
+
+
+$selector-1: "a";
+$selector-2: ".disabled";
+
+@debug selector.append($selector-1, $selector-2);
+
+
+// Color Functions
+
+
+$color: rgb(226, 81, 255);
+@debug color.adjust($color, $red: -50);
+$color-2: rgb(176, 81, 255);
+
+
+@debug color.complement($color);
+$color-comp: #6eff51;
+@debug darken($color, 20%);
+$color-darken: #c300ea;
+@debug lighten($color, 20%);
+$color-lighten: #f3b7ff;
