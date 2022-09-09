@@ -1,0 +1,130 @@
+@mixin btn-sm-modify{
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.1rem 1rem;
+}
+
+@mixin btn-base {
+    font-weight: 500;
+    padding: 0.25rem 1.5rem;
+    border-radius: 0.25rem;
+}
+
+$color-main: #0075ff;
+$color-footer: #f4f8fe;
+
+.btn-main{
+    @include btn-base();
+    background-color: $color-main;
+    color: white;
+    border: solid 1px $color-main;
+
+    &:hover{
+        background-color: white;
+        color: $color-main;
+    }
+    &-s{
+        @extend .btn-main;
+        @include btn-sm-modify();
+    }
+}
+
+.btn-sec{
+    @include btn-base();
+    color: #000000;
+    background-color: transparent;
+    border: none;
+
+    &-s{
+        @extend .btn-sec;
+        @include btn-sm-modify();
+    }
+
+    &:hover{
+        color: $color-main;
+    }
+}
+
+
+.main-menu{
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    li{
+        display: inline;
+        font-size: 1rem;
+        font-weight: 500;
+        list-style: none;
+        margin-right: 1rem;
+
+        a{
+            color: #000000;
+            text-decoration: none;
+            
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.icon-sm {
+    i {
+        font-size: 1.25rem;
+        padding: 0.2rem 0.4rem;
+        border-radius: 50%;
+        color: $color-main;
+        box-shadow: 0 0 10px #00000040;
+    }
+}
+
+.benefit {
+
+    display: flex;
+    flex-direction: column;
+    i {
+        color: $color-main;
+        font-size: 7rem;
+        text-align: center;
+    }
+
+    .description {
+        .title {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .text{
+            color: #8c8c8c;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+
+    .cta{
+        margin-top: 3rem;
+        color: $color-main;
+        font-weight: 500;
+        text-align: center;
+    }
+}
+
+.icon-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    i {
+        color: $color-main;
+        font-size: 7rem;
+        padding: 0;
+    }
+
+    .title{
+        margin-top: -1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,173 @@
+@use "components";
+
+@mixin section-display{
+    width: 100%;
+    max-width: 992px;
+    margin: auto;
+    padding: 3rem;
+}
+
+body {
+    padding: 0;
+    margin: 0;    
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    border-bottom: solid 1px #ddd;
+}
+
+.logo a img {
+    max-width: 8rem;
+}
+
+.sec-home {
+    @include section-display();
+    display: flex;
+    align-items: center;
+    .home-cta{
+
+        flex: 1;
+        .cta-text{
+            color: components.$color-main;
+            a {
+                text-decoration: none;
+                font-weight: 500;
+            }
+        }
+        .home-title{
+            width: 25rem;
+            font-weight: 600;
+        }
+        .home-description {
+            width: 25rem;
+        }
+    }
+}
+
+.sec-features {
+    @include section-display();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .intro{
+        text-align: center;
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        p{
+            font-size: 0.9rem;
+            color: #999;
+        }
+    }
+
+    .features {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        .text {
+            padding: 2rem 0;
+            flex: 1;
+            .feature {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .description {
+                    margin-left: 1rem;
+                    max-width: 20rem;
+                    .description-title {
+                        font-size: 1.15rem;
+                    }
+
+                    .description-text {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .image {
+        img {
+            max-width: 20rem;
+        }
+    }
+}
+
+.sec-benefits {
+    border-top: 1px solid #ddd;
+    .intro {
+        @extend .sec-features, .intro;
+    }
+    .benefit-cards {
+        width: 100%;
+    }
+}
+
+.sec-kpis {
+    width: 100%;
+    background-color: components.$color-main;
+    color: white;
+    padding: 4rem;
+
+    .kpi {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .number{
+            font-size: 3.5rem;
+            font-weight: 600;
+        }
+
+        .desc {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.6);
+        }
+    }
+}
+
+.sec-onboarding {
+    .intro {
+        @extend .sec-features, .intro;
+    }
+
+    .steps {
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .step-separator {
+            flex: 1;
+            border-top: 2px solid #ddd;
+        }
+    }
+}
+
+.sec-footer-cta{
+    background-color: components.$color-footer;
+    padding: 5rem;
+    background-image: url("../assets/img/astronaut.png");
+    background-repeat: no-repeat;
+    background-position: 100%;
+
+    .footer-cta {
+        width: 50%;
+        .cta-title{
+            font-size: 3rem;
+            
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+        }
+    }
+}
