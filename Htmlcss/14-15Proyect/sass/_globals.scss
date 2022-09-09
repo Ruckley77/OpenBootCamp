@@ -29,8 +29,7 @@ body {
     @include section-display();
     display: flex;
     align-items: center;
-    .home-cta{
-
+    .home-cta {
         flex: 1;
         .cta-text{
             color: components.$color-main;
@@ -40,11 +39,17 @@ body {
             }
         }
         .home-title{
-            width: 25rem;
+            width: 22rem;
             font-weight: 600;
         }
         .home-description {
             width: 25rem;
+        }
+
+        .lead-magnet {
+            .input-col {
+                max-width: 200px;
+            }
         }
     }
 }
@@ -107,6 +112,7 @@ body {
     }
     .benefit-cards {
         width: 100%;
+        padding: 0 2rem 2rem 2rem;
     }
 }
 
@@ -168,6 +174,48 @@ body {
 
         .cta-description {
             font-size: 1.1rem;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .sec-home {
+        .home-cta {
+            text-align: center;
+            width: 100%;
+            .home-title{
+                width: 100%;
+            }
+
+            .home-description{
+                width: 100%;
+            } 
+        }
+    }
+
+    .sec-benefits{
+        .intro{
+            text-align: center;
+        }
+    }
+
+    .sec-onboarding {
+        .steps {
+            flex-direction: column;
+            .icon-desc {
+                .title {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .sec-footer-cta{
+        background-image: none;
+        .footer-cta {
+            width: 100%;
+            text-align: center;
         }
     }
 }

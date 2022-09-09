@@ -140,11 +140,14 @@ body {
   font-weight: 500;
 }
 .sec-home .home-cta .home-title {
-  width: 25rem;
+  width: 22rem;
   font-weight: 600;
 }
 .sec-home .home-cta .home-description {
   width: 25rem;
+}
+.sec-home .home-cta .lead-magnet .input-col {
+  max-width: 200px;
 }
 
 .sec-features, .sec-onboarding .intro, .sec-benefits .intro {
@@ -199,6 +202,7 @@ body {
 }
 .sec-benefits .benefit-cards {
   width: 100%;
+  padding: 0 2rem 2rem 2rem;
 }
 
 .sec-kpis {
@@ -248,6 +252,35 @@ body {
 }
 .sec-footer-cta .footer-cta .cta-description {
   font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .sec-home .home-cta {
+    text-align: center;
+    width: 100%;
+  }
+  .sec-home .home-cta .home-title {
+    width: 100%;
+  }
+  .sec-home .home-cta .home-description {
+    width: 100%;
+  }
+  .sec-benefits .intro {
+    text-align: center;
+  }
+  .sec-onboarding .steps {
+    flex-direction: column;
+  }
+  .sec-onboarding .steps .icon-desc .title {
+    text-align: center;
+  }
+  .sec-footer-cta {
+    background-image: none;
+  }
+  .sec-footer-cta .footer-cta {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
