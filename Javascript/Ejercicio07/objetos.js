@@ -1,7 +1,7 @@
 const personalData = {
     nombre: "Juan",
     apellido: "Marulanda",
-    edad: 23,
+    edad: 24,
     altura_cm: 185,
     eresDesarrollador: true,
 }
@@ -9,7 +9,10 @@ const personalData = {
 const edad1 = "edad"
 console.log(personalData[edad1])
 
-const userList = [personalData, 
+const userList = [
+    {
+        ...personalData
+    },
     {
         nombre: "Kogi",
         apellido: "Hoyos",
@@ -27,5 +30,5 @@ const userList = [personalData,
 ]
 console.log(userList);
 
-const orderedList = userList.sort((a,b) => a.edad = b.edad)
+const orderedList = userList.sort((a,b) => b.edad - a.edad)
 console.log(orderedList);
