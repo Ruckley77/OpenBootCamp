@@ -1,5 +1,6 @@
 const array = [1, 2, 3, 4, 5, 6, 2, 3, {id: 5}, {id: 5}]
 const mySet = new Set(array)
+// const family = new Set(["Juan", "Daniel"])
 
 // set allows to remove data with the same value.
 // objects even tho they have the same attributes, they are not the same object.
