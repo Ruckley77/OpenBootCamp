@@ -1,0 +1,15 @@
+{"level":"info","message":"Informative message","service":"user-service"}
+{"level":"warn","message":"Warning message","service":"user-service"}
+{"level":"error","message":"This is an error","service":"user-service"}
+{"level":"info","message":"Informative message","service":"user-service"}
+{"level":"debug","message":"Debugging message","service":"user-service"}
+{"level":"warn","message":"Warning message","service":"user-service"}
+{"level":"error","message":"This is an error","service":"user-service"}
+{"level":"info","message":"Informative message"}
+{"level":"debug","message":"Debugging message"}
+{"level":"warn","message":"Warning message"}
+{"level":"error","message":"This is an error"}
+{"level":"info","message":"Informative message"}
+{"level":"debug","message":"Debugging message"}
+{"level":"warn","message":"Warning message"}
+{"level":"error","message":"This is an error"}
