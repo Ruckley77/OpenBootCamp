@@ -39,10 +39,7 @@ trash.addEventListener(("dragover"), event => {
 
 trash.addEventListener(("drop"), event => {
     const id_p = event.dataTransfer.getData("id")
-    console.log("Dropping in trash", id_p)
-    const parragraph = document.getElementById(id_p)
-    trash.appendChild(parragraph)
-    trash.removeChild(parragraph)
+    document.getElementById(id_p).remove()
 })
 
 
