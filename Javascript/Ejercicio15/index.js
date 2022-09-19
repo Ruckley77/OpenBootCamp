@@ -6,11 +6,11 @@ const persona = {
     apellido
 }
 
-sessionStorage.setItem("Nombre", JSON.stringify(persona))
-localStorage.setItem("Nombre", JSON.stringify(persona))
+// sessionStorage.setItem("persona", JSON.stringify(persona))
+// localStorage.setItem("persona", JSON.stringify(persona))
 
-document.cookie = ("CookieJuan", JSON.stringify(persona))
+const expireDate = new Date()
 
+expireDate.setTime(expireDate.getTime() + (120 * 1000))
 
-const fecha = new Date()
-document.cookie = "nameExpires = name; expires = " + fecha.setTime(fecha.getTime() + (120*1000))
+// document.cookie = `persona = ${JSON.stringify(persona)}; expires = ${expireDate}`

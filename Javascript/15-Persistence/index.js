@@ -26,5 +26,3 @@ document.cookie = "namecookie = JuanCookie"
 
 //set expires requiring cookies.
 document.cookie = "nameExpires = name; expires = " + new Date(2022,10,20).toUTCString()
-
-console.log(document.cookie);
