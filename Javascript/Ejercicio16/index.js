@@ -32,18 +32,18 @@ sections.forEach(section => {
     })
 })
 
-// trash.addEventListener(("dragover"), event => {
-//     console.log("dragging over trash")
-//     event.preventDefault()
-// })
+trash.addEventListener(("dragover"), event => {
+    console.log("dragging over trash")
+    event.preventDefault()
+})
 
-// trash.addEventListener(("drop"), event => {
-//     const id_p = event.dataTransfer.getData("id")
-//     console.log("Dropping in trash", id_p)
-//     const parragraph = document.getElementById(id_p)
-//     trash.appendChild(parragraph)
-//     trash.removeChild(parragraph)
-// })
+trash.addEventListener(("drop"), event => {
+    const id_p = event.dataTransfer.getData("id")
+    console.log("Dropping in trash", id_p)
+    const parragraph = document.getElementById(id_p)
+    trash.appendChild(parragraph)
+    trash.removeChild(parragraph)
+})
 
 
 //dataTransfer  dropeffect is the icon when dropping.
