@@ -1,0 +1,19 @@
+Components  - this are JSX files
+  container
+    4. task_list - importing from child the tasks, then defining how would the be input in the html.
+  pure
+    forms
+      3. task - defining how the task will look like in html, then exporting it to be used by parent.
+
+Hooks
+Models - this are JS files
+  2. level.enum - We define an object, which will be the level of the task itself, exporting it to be used elsewhere.
+
+  1. task.class - We define the object/class task as well as the constructor since this is the object that will be created time and time again with all the attributes that will receive.Also, defining a boolean that will check if ? true or : false if the task was completed or not. importing the level.enum, exporting it to be used by the component task.
+
+Pages
+
+Routes
+
+
+5. App.js - is the one that renders the app, that we edit.
