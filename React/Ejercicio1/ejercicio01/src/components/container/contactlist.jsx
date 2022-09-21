@@ -8,7 +8,7 @@ const ContactListComponent = () => {
 
   return (
     <div>
-      <h1> Tus Contactos: </h1>
+      <h1> Tu Perfil: </h1>
       <ContactComponent contact={defaultContact}></ContactComponent>
     </div>
   );

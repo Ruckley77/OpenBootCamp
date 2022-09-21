@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const GreetingF = (props) => {
   // since this is a function so there is no constructor.
   // Introduction to useState
-  // [variable, method to update] = userState(initial Value)
+  // [variable, method to update] = useState(initial Value)
   const [age, setAge] = useState(23);
 
   const birthday = () => {
