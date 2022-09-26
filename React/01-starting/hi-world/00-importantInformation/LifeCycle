@@ -1,0 +1,32 @@
+Render Phase:
+  Pure and has no side effects. May be paused, aborted or restarted by react.
+
+
+
+Commit Phase: 
+  Can work with DOM, run side effects, schedule updates.
+
+componentDidMount: is the first one to be executed in the life cycle.
+componentDidUpdate: once its already mounted, it may update in its life cycle.
+componentWillUnmount: Not all components will unmount, but some of them will. before dissapearing this is the point where you want to save the information in local or session storage.
+
+
+
+
+  Mounting                                 Updating                              Unmounting
+  Render: Constructor             (new props, setState, forceUpdate)    |             
+---------------------------      it will transfer the information below |
+
+  Render: render --- render --- render --- render --- render --- render |
+
+  Commit: react updates DOM and refs ---- react updates DOM and refs ---|
+  Commit: componentDidMount         commit: componentDidUpdate          |  componeneWillUnmount 
+
+
+
+
+Methods LifeCycle             Hooks LifeCycle
+ES5                           ES6
+Class Components              Function Components
+Constructor to initiate       No constructor needed
+use of THIS                   No need of THIS
