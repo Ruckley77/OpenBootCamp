@@ -13,9 +13,9 @@ const Clock = () => {
 
   function updatePersona(){
     setPersona({
+      fecha: new Date(),
       nombre: persona.nombre,
       apellido: persona.apellido,
-      fecha: new Date(),
       edad: persona.edad + 1,
     })
   }
@@ -29,7 +29,7 @@ const Clock = () => {
     return () => {
       clearInterval(intervaloID)
     }
-  },)
+  })
 
   return (
     <div>
