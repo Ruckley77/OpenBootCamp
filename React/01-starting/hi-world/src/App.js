@@ -9,8 +9,13 @@ import MyComponentWithContext from './hooks/example3';
 import Example4 from './hooks/example4';
 import GreetingStyled from './components/pure/greetingStyled';
 import Father from './components/container/father';
+import OptionalRender from './components/pure/optionalRender';
 
 function App() {
+
+  
+
+
   return (
     <div className="App">
       {/* <header className="App-header"> */}
@@ -22,7 +27,8 @@ function App() {
         {/* Below is the greeting done with function */}
         {/* <GreetingF name="Martin"></GreetingF> */}
 
-        {/* Below is the component that has all the tasks lists.*/}
+        {/* Below is the component that has all the tasks lists.
+        FINAL PROJECT */}
         {/* <TaskListComponent></TaskListComponent> */}
         
         {/* Below is the examples of hook uses  */}
@@ -43,9 +49,13 @@ function App() {
 
 
         {/* Events */}
-        <Father></Father>
+        {/* <Father></Father> */}
 
       {/* </header> */}
+
+      {/* Examples conditional rendering */}
+
+      <OptionalRender></OptionalRender>
     </div>
   );
 }

@@ -11,7 +11,7 @@ import { LEVELS } from '../../models/levels.enum';
 
 // create my component 
 // the parameter of this component its a task.
-const TaskComponent = ({task}) => {
+const TaskComponent = ({task, complete, remove}) => {
 
   useEffect(() => {
     console.log("Task Created")
@@ -53,10 +53,10 @@ const TaskComponent = ({task}) => {
 // Function that returns an icon depending on the completion of the task
   function taskCompletedIcon(){
     if (task.completed){
-      return <i className='align-middle bi-toggle-on' style={{color:'green', fontWeight:'bold'}}></i>
+      return <i onClick={() => complete(task)} className='align-middle bi-toggle-on task-action' style={{color:'green', fontWeight:'bold'}}></i>
     }
     else {
-      return <i className='align-middle bi-toggle-off' style={{color:'gray', fontWeight:'bold'}}></i>
+      return <i onClick={() => complete(task)} className='align-middle bi-toggle-off task-action' style={{color:'gray', fontWeight:'bold'}}></i>
     }
   }
 
@@ -75,7 +75,7 @@ const TaskComponent = ({task}) => {
       <td>
       {/* Execution of function that returns Icon to show if the task was completed or its pending*/}
       { taskCompletedIcon() }
-      <i className='align-middle bi-trash' style={{color:'red', fontSize: '1rem'}}></i>
+      <i onClick={() => remove(task)} className='align-middle bi-trash task-action' style={{color:'red', fontSize: '1rem'}}></i>
       </td>
     </tr>
   );
@@ -84,7 +84,9 @@ const TaskComponent = ({task}) => {
 // check that the new TaskComponent that was just created, its type/instanceOf is a Task.
 // Task its imported from the object we created to define what a Task is defined by.
 TaskComponent.propTypes = {
-  task: PropTypes.instanceOf(Task)
+  task: PropTypes.instanceOf(Task).isRequired,
+  complete: PropTypes.func.isRequired,
+  remove: PropTypes.func.isRequired
 };
 
 

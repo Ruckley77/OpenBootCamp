@@ -24,7 +24,7 @@ const TaskListComponent = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log("Task State has been modified");
+    console.log("Task State has been modified")
     setLoading(false)
     return () => {
       console.log("TaskList component is going to unmount")
@@ -33,8 +33,34 @@ const TaskListComponent = () => {
 
 
   
-  const changeCompleted = (id) => {
-    console.log("To do: change state of a task")
+  function completeTask(task){
+    console.log("Complete this Task: ", task)
+
+    // define iteration number
+    const index = tasks.indexOf(task)
+    
+    // once this function is executed
+    // under task[position], change the completed status.
+    tasks[index].completed = !tasks[index].completed
+
+    // once changed, update it with setTask.
+    setTasks([...tasks])
+    console.log(task.completed)
+  }
+
+  function deleteTask(task){
+    console.log("Delete this Task: ", task);
+    // define iteration number
+    const index = tasks.indexOf(task)
+    // remove the task  (initialIndex,numberoftasks)
+    tasks.splice(index, 1)
+    // once changed, update it with setTask.
+    setTasks([...tasks])
+  }
+
+  function addTask(task){
+    console.log("Add this Task: ", task);
+    setTasks([...tasks, task])
   }
 
   return (
@@ -63,7 +89,9 @@ remember that proptypes are passed over to parents to be used*/}
                 return (
                       <TaskComponent
                         task={task}
-                        key={index}>
+                        key={index}
+                        complete={completeTask}
+                        remove={deleteTask}>
                       </TaskComponent>
                       )
                     }
@@ -72,10 +100,9 @@ remember that proptypes are passed over to parents to be used*/}
               </tbody>
             </table>
           </div>
-          <TaskForm></TaskForm>
         </div>
       </div>
-
+      <TaskForm add = {addTask}></TaskForm>
     </div>
   );
 };
