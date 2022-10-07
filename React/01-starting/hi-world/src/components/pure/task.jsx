@@ -2,12 +2,14 @@
 
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
+
+// Models 
 import { Task } from '../../models/task.class';
+import { LEVELS } from '../../models/levels.enum';
 
 //importing styles from task.scss
 
 import '../../styles/task.scss'
-import { LEVELS } from '../../models/levels.enum';
 
 // create my component 
 // the parameter of this component its a task.
@@ -33,7 +35,7 @@ const TaskComponent = ({task, complete, remove}) => {
       case LEVELS.URGENT:
           return(
           <h6 className='mb-0'>
-            <span className='badge bg-warning'>
+            <span className='badge' style={{backgroundColor: "orange"}}>
               {task.level}
             </span>
           </h6>)
@@ -60,8 +62,21 @@ const TaskComponent = ({task, complete, remove}) => {
     }
   }
 
+  const taskCompletedStyle = {
+    fontWeight: "bold",
+    color: "gray" ,
+    textDecoration: "line-through"  
+  }
+
+  const taskPendingStyle = {
+  fontWeight: "bold",
+  color: "crimson"
+  }
   return (
-    <tr className='fw-normal'>
+    <tr  
+    style={task.completed 
+    ? taskCompletedStyle
+    : taskPendingStyle}>
       <th>
         <span className='ms-2'> {task.name} </span>
       </th>
