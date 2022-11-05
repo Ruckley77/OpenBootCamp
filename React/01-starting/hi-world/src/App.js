@@ -12,6 +12,11 @@ import Father from './components/container/father';
 import OptionalRender from './components/pure/optionalRender';
 import LoginFormik from './components/pure/forms/loginFormik';
 import RegisterFormik from './components/pure/forms/registerFormik';
+import AsyncExample from './components/pure/asyncExample';
+import ObservableExample from './components/pure/observableExample';
+import FetchExample from './components/pure/fetchExample';
+import AxiosExample from './components/pure/axiosExample';
+import AxiosCRUDExample from './components/pure/axiosCRUDExample';
 
 function App() {
 
@@ -60,7 +65,18 @@ function App() {
 
       {/* Formik and Yup */}
         {/* <LoginFormik></LoginFormik> */}
-        <RegisterFormik></RegisterFormik>
+        {/* <RegisterFormik></RegisterFormik> */}
+
+      {/* Async examples */}
+        {/* <AsyncExample></AsyncExample> */}
+        {/* <ObservableExample></ObservableExample> */}
+
+      {/* Fetch Examples  */}
+        {/* <FetchExample></FetchExample> */}
+
+      {/* Axios Examples */}
+        {/* <AxiosExample/> */}
+        <AxiosCRUDExample/>
     </div>
   );
 }

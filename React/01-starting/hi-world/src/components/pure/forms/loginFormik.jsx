@@ -1,5 +1,6 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 
 // Yup schema. 
@@ -20,6 +21,16 @@ const LoginFormik = () => {
     password: ""
   }
 
+  const navigate = useNavigate()
+
+  const goToHome = () => {
+    navigate('/')
+  }
+
+  const goToProfile = () => {
+    navigate('/profile')
+  }
+
   return (
 
     <div>
@@ -37,7 +48,8 @@ const LoginFormik = () => {
           alert(JSON.stringify(values, null, 2))
 
           // We save the data in the localStorage
-          localStorage.setItem("credentials", values)
+          await localStorage.setItem("credentials", values)
+          goToProfile()
         }}>
 
           {/* We obtain props from Formik */}

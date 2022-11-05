@@ -5,10 +5,11 @@ import { LEVELS } from '../../models/levels.enum'; // import levels because its 
 import { Task } from '../../models/task.class'; //importing task.class because its the one that creates the tasks in the first place.
 import TaskComponent from '../pure/task';
 
-//importing styles from task.scss
-import '../../styles/task.scss';
+// importing the form
 import TaskForm from '../pure/forms/taskForm';
 
+//importing styles from task.scss
+import '../../styles/task.scss';
 
 // now we create our task list component that will gather all the task components.
 const TaskListComponent = () => {
@@ -32,8 +33,6 @@ const TaskListComponent = () => {
       console.log("TaskList component is going to unmount")
     };
   }, [tasks]);
-
-
   
   function completeTask(task){
     console.log("Complete this Task: ", task)
@@ -139,6 +138,5 @@ remember that proptypes are passed over to parents to be used*/}
 };
 
 //tasklist has no props so there is no need of propTypes.
-
 //exporting task list components so its used by app.js
 export default TaskListComponent;

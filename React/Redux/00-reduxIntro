@@ -1,0 +1,23 @@
+npm i redux react-redux --save
+npm i redux-devtools-extension --save-dev
+
+
+Redux
+
+Store                  /          Root Reducer              /        Actions
+UserState                         UserReducer                        Objects:
+  -name                            -Listen actions which type:        -Type(string)
+  -email                             Update_user                      -Payload(anything)
+-                                    Delete_user
+-
+TodoState                         TodoReducer
+  -todoList                        -Listen actions which type:
+-                                   Add_Todo
+-                                   Delete_Todo
+
+-                                  Pure Functions that have
+-                                  that have switch case depending
+-                                  on actions.
+
+-                                  Receive an Action and evaluate the type
+-                                  and through the payload (content sent from action)

@@ -11,10 +11,15 @@ import { LEVELS } from '../../models/levels.enum';
 
 import '../../styles/task.scss'
 
+// importing link for the use of routes, useParams for id
+
+import { Link } from 'react-router-dom';
+
 // create my component 
-// the parameter of this component its a task.
+// the parameter of this component its a task, the complete function and the remove function.
 const TaskComponent = ({task, complete, remove}) => {
 
+  // lifecycle of component
   useEffect(() => {
     console.log("Task Created")
     return () => {
@@ -72,6 +77,7 @@ const TaskComponent = ({task, complete, remove}) => {
   fontWeight: "bold",
   color: "crimson"
   }
+
   return (
     <tr  
     style={task.completed 
@@ -92,6 +98,9 @@ const TaskComponent = ({task, complete, remove}) => {
       { taskCompletedIcon() }
       <i onClick={() => remove(task)} className='align-middle bi-trash task-action' style={{color:'red', fontSize: '1rem'}}></i>
       </td>
+      <td>
+      <Link to="/tasks/1" state={{ name: task.name, description: task.description}} className="bi bi-info-circle"></Link>
+      </td>
     </tr>
   );
 };
@@ -103,6 +112,5 @@ TaskComponent.propTypes = {
   complete: PropTypes.func.isRequired,
   remove: PropTypes.func.isRequired
 };
-
 
 export default TaskComponent;

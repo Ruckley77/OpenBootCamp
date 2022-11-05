@@ -1,21 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// ! Adding bootstrap, it needs to be one line up from the index.css
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-icons/font/bootstrap-icons.css'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import AppRoutingOne from './AppRoutingOne';
-import AppRoutingFinal from './AppRoutingFinal';
+
+// import provider from react-redux specifically
+import { Provider } from 'react-redux';
+
+// import Config Function of App store
+import { AppStore } from './store/config/storeConfig';
+
+let createAppStore = AppStore();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-    {/* <AppRoutingOne/> */}
-    {/* <AppRoutingFinal/> */}
-  </React.StrictMode>
+  // prop store={yourstore}
+  <Provider store={createAppStore}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

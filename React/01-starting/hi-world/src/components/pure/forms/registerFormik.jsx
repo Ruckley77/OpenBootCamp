@@ -68,10 +68,10 @@ const RegisterFormik = () => {
     <Formik
       initialValues={initialValues}
 
-      // * Yup Validation Schema
+      // Yup Validation Schema
       validationSchema = {registerSchema}
 
-      // * onSubmit Event
+      // onSubmit Event
       onSubmit = { async (values) => {
           await new Promise((r) => setTimeout(r, 500))
           alert(JSON.stringify(values, null, 2))
