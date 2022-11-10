@@ -1,0 +1,178 @@
+// ? Dev dependecies 
+npm init
+@babel/cli
+@babel/core
+@babel/preset-env
+@babel/preset-react
+babel-loader
+css-loader
+documentation
+eslint
+webpack
+webpack-cli
+webpack-dev-server
+node-sass
+sass-loader
+html-webpack-plugin
+mini-css-extract-plugin
+file-loader
+source-map-loader
+
+// ? Production dependecies
+axios
+bootstrap
+react
+react-dom
+react-redux
+react-router-dom
+redux-saga"
+
+
+// ? create following files
+
+.babelrc
+  {
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "absoluteRuntime": false,
+        "corejs": false,
+        "regenerator": true,
+        "useESModules": true,
+        "version": "7.19.6"
+      }
+    ]
+  ]
+}
+
+.editorconfig
+  indent_style = tab
+  end_of_line = lf
+  insert_final_newline = true
+  tab_width = 2
+  charset = utf-8
+  trim_trailing_whitespace = true
+
+index.html
+  create classic html5 file and add a div.root
+webpack.config.js
+  check below 
+
+// ? configure webpack.config
+
+entry
+  for more info go into webpack.config.js
+output
+  for more info go into webpack.config.js
+context
+  for more info go into webpack.config.js
+dev server 
+  for more info go into webpack.config.js
+devtools 
+  for more info go into webpack.config.js
+modules
+  for more info go into webpack.config.js
+plugins
+  for more info go into webpack.config.js
+resolve
+  for more info go into webpack.config.js
+
+
+// ? eslint --init
+select all pertinent options 
+
+// ? create folders
+docs
+src
+  assets
+  components
+    App.jsx
+  env 
+  pages 
+  routes 
+  styles
+    css
+      index.scss
+    fonts
+index.jsx
+
+// ? adding things to ESlint 
+"overrides": [
+    {
+        "files": [
+            "*.jsx",
+            "*.js"
+        ]
+    }
+],
+"globals": {
+    "document": true
+},
+"settings": {
+    "react": {
+        "version": "detect"
+    }
+},
+"rules": {
+    "linebreak-style": 0,
+    "semi": 0,
+    "arrow-body-style": 0,
+    "react/prop-types": 0,
+    "react/function-component-definition": [
+        "error",
+        {
+        "namedComponents": ["function-declaration", "arrow-function"],
+        "unnamedComponents": "arrow-function"
+        }
+    ]
+  }
+}
+
+// ? adding scripts in package.json
+
+"lint": "eslint ./src",
+"lint:fix": "eslint --fix ./src",
+"deploy:dev": "webpack-dev-server --mode development --hot --open --static",
+"docs:build": "documentation build src/** -f html -o docs",
+"build": "webpack --mode development",
+"build:prod": "webpack --mode production"
+
+// ? Code in your App.jsx
+
+import React from 'react';
+
+const App = () => {
+  return (
+    <div>
+      <h1> Final </h1>
+    </div>
+  );
+}
+
+export default App;
+
+// ? Code in your index.jsx
+
+import React from "react";
+import ReactDOM  from "react-dom";
+
+import { Provider } from 'react-redux';
+
+import App from './components/app';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/index.scss';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App/>
+  </React.StrictMode>,
+  document.getElementById('root')
+)
+
+// ? npm run docs:build
