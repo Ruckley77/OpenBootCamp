@@ -5,11 +5,11 @@ import ReactDOM from 'react-dom/client';
 // Imports from Redux
 // import { Provider } from 'react-redux';
 
-import App from './components/App';
-
 // Import style sheets
-import 'bootstrap';
-import './styles/css/index.scss';
+
+import App from './components/App';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './styles/css/index.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

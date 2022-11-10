@@ -76,14 +76,34 @@ module.exports = {
         test: /(\.css|\.scss|\.sass)$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: 'style-loader'
+          },
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false,
+            }
           },
           {
             loader: 'css-loader',
           },
           {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                // eslint-disable-next-line func-names, object-shorthand
+                plugins: function () {
+                  return [
+                    // eslint-disable-next-line global-require
+                    require('autoprefixer')
+                  ]
+                }
+              }
+            }
+          },
+          {
             loader: 'sass-loader'
-          }
+          },
         ]
       },
       // rules for images

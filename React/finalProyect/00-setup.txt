@@ -1,31 +1,44 @@
-// ? Dev dependecies 
-npm init
-@babel/cli
-@babel/core
-@babel/preset-env
-@babel/preset-react
-babel-loader
-css-loader
-documentation
-eslint
-webpack
-webpack-cli
-webpack-dev-server
-node-sass
-sass-loader
-html-webpack-plugin
-mini-css-extract-plugin
-file-loader
-source-map-loader
+// ? Dev dependecies
+
+  "@babel/cli": "^7.19.3",
+  "@babel/core": "^7.20.2",
+  "@babel/plugin-transform-modules-commonjs": "^7.19.6",
+  "@babel/plugin-transform-runtime": "^7.19.6",
+  "@babel/preset-env": "^7.20.2",
+  "@babel/preset-react": "^7.18.6",
+  "autoprefixer": "^10.4.13",
+  "babel-loader": "^9.1.0",
+  "css-loader": "^6.7.1",
+  "documentation": "^14.0.0",
+  "eslint": "^8.27.0",
+  "eslint-config-airbnb": "^19.0.4",
+  "eslint-plugin-import": "^2.26.0",
+  "eslint-plugin-jsx-a11y": "^6.6.1",
+  "eslint-plugin-react": "^7.31.10",
+  "eslint-plugin-react-hooks": "^4.6.0",
+  "eslint-webpack-plugin": "^3.2.0",
+  "file-loader": "^6.2.0",
+  "html-webpack-plugin": "^5.5.0",
+  "mini-css-extract-plugin": "^2.6.1",
+  "node-sass": "^7.0.3",
+  "postcss-loader": "^7.0.1",
+  "sass": "^1.56.1",
+  "sass-loader": "^13.1.0",
+  "source-map-loader": "^4.0.1",
+  "style-loader": "^3.3.1",
+  "webpack": "^5.74.0",
+  "webpack-cli": "^4.10.0",
+  "webpack-dev-server": "^4.11.1"
 
 // ? Production dependecies
-axios
-bootstrap
-react
-react-dom
-react-redux
-react-router-dom
-redux-saga"
+
+  "axios": "^1.1.3",
+  "bootstrap": "^5.2.2",
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+  "react-redux": "^8.0.5",
+  "react-router-dom": "^6.4.3",
+  "redux-saga": "^1.2.1"
 
 
 // ? create following files
@@ -59,120 +72,312 @@ redux-saga"
   trim_trailing_whitespace = true
 
 index.html
-  create classic html5 file and add a div.root
+  create classic html5 file and add a div with id root
 webpack.config.js
   check below 
 
 // ? configure webpack.config
+----------------
 
-entry
-  for more info go into webpack.config.js
-output
-  for more info go into webpack.config.js
-context
-  for more info go into webpack.config.js
-dev server 
-  for more info go into webpack.config.js
-devtools 
-  for more info go into webpack.config.js
-modules
-  for more info go into webpack.config.js
-plugins
-  for more info go into webpack.config.js
-resolve
-  for more info go into webpack.config.js
+/* eslint-disable linebreak-style */
+/* eslint-disable eol-last */
+/* eslint-disable semi */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable comma-dangle */
+/* eslint-disable linebreak-style */
+const path = require('path')
 
+// plugins, mini Css, Scss/Sass
+// to reduce the amount of style pages
 
-// ? eslint --init
-select all pertinent options 
+const HtmlWebpackPlugin = require('html-webpack-plugin') // for the template that webpack uses
 
-// ? create folders
-docs
-src
-  assets
-  components
-    App.jsx
-  env 
-  pages 
-  routes 
-  styles
-    css
-      index.scss
-    fonts
-index.jsx
+const MiniCssExtractPlugin = require('mini-css-extract-plugin') // reduce css
 
-// ? adding things to ESlint 
-"overrides": [
-    {
-        "files": [
-            "*.jsx",
-            "*.js"
+const { SourceMapDevToolPlugin } = require('webpack') // To know the SourceMap of our proyect
+
+const ESLintPlugin = require('eslint-webpack-plugin'); // replacing eslint-loader
+
+// Port Config
+
+const port = process.env.PORT || 3000
+
+// export webpack config
+
+module.exports = {
+  // ? entry
+  entry: './src/index.jsx', // Point of access 
+
+  // ? output
+  output: {
+    path: path.join(__dirname, '/dist'), // all bundle generated will go under /dist
+    filename: 'bundle.[fullhash].js',
+    publicPath: '/'
+  },
+  // ? context
+  context: path.resolve(__dirname),
+
+  // ? dev server
+  devServer: {
+    port,
+    historyApiFallback: true
+  },
+
+  // ? devtools
+  devtool: 'eval-source-map',
+
+  // ? modules
+  module: {
+    rules: [
+      // rules for JS and JSX
+      {
+        enforce: 'pre',
+        test: /(\.js|\.jsx)$/, // it will test both js and jsx
+        exclude: /node_modules/,
+        use: [
+          'source-map-loader'
         ]
-    }
-],
-"globals": {
-    "document": true
-},
-"settings": {
-    "react": {
-        "version": "detect"
-    }
-},
-"rules": {
-    "linebreak-style": 0,
-    "semi": 0,
-    "arrow-body-style": 0,
-    "react/prop-types": 0,
-    "react/function-component-definition": [
-        "error",
-        {
-        "namedComponents": ["function-declaration", "arrow-function"],
-        "unnamedComponents": "arrow-function"
-        }
+      },
+      // rules for Babel ES and JSX
+      {
+        test: /(\.js|\.jsx)$/,
+        exclude: /node_modules/,
+        use: { 
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/env',
+              '@babel/react'
+            ]
+          }
+        },
+      },
+      // rules for CSS, SCSS, SASS
+      {
+        test: /(\.css|\.scss|\.sass)$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false,
+            }
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                // eslint-disable-next-line func-names, object-shorthand
+                plugins: function () {
+                  return [
+                    // eslint-disable-next-line global-require
+                    require('autoprefixer')
+                  ]
+                }
+              }
+            }
+          },
+          {
+            loader: 'sass-loader'
+          },
+        ]
+      },
+      // rules for images
+      {
+        test: /(\.png|\.jpe?g|\.gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+          }
+        ]
+      },
     ]
+  },
+
+  // ? plugins
+  plugins: [
+    // template HTML
+    new HtmlWebpackPlugin(
+      {
+        template: './public/index.html'
+      }
+    ),
+    new MiniCssExtractPlugin(
+      {
+        filename: './css/styles.css'
+      }
+    ),
+    new SourceMapDevToolPlugin(
+      {
+        filename: '[file].map'
+      }
+    ),
+    new ESLintPlugin(
+      {
+        files: './node_modules/eslint-webpack-plugin'
+      }
+    )
+  ],
+  
+  // ? resolve
+  resolve: {
+    extensions: ['.js', '.jsx', '.css', '.scss', '.sass'],
+    modules: [
+      'node_modules'
+    ],
+    alias: {
+      'react-redux': path.join(__dirname, '/node_modules/react-redux/dist/react-redux.min.js')
+    }
   }
 }
+----------------
+
+// ? eslint --init
+
+  select all pertinent options 
+
+
+
+// ? adding things to .eslintrc.json
+
+  "overrides": [
+      {
+          "files": [
+              "*.jsx",
+              "*.js"
+          ]
+      }
+  ],
+  "globals": {
+      "document": true
+  },
+  "settings": {
+      "react": {
+          "version": "detect"
+      }
+  },
+  "rules": {
+      "linebreak-style": 0,
+      "semi": 0,
+      "arrow-body-style": 0,
+      "react/prop-types": 0,
+      "react/function-component-definition": [
+          "error",
+          {
+          "namedComponents": ["function-declaration", "arrow-function"],
+          "unnamedComponents": "arrow-function"
+          }
+      ]
+    }
+  }
 
 // ? adding scripts in package.json
 
-"lint": "eslint ./src",
-"lint:fix": "eslint --fix ./src",
-"deploy:dev": "webpack-dev-server --mode development --hot --open --static",
-"docs:build": "documentation build src/** -f html -o docs",
-"build": "webpack --mode development",
-"build:prod": "webpack --mode production"
+  "lint": "eslint ./src",
+  "lint:fix": "eslint --fix ./src",
+  "deploy:dev": "webpack-dev-server --mode development --hot --open --static",
+  "docs:build": "documentation build src/** -f html -o docs",
+  "build": "webpack --mode development",
+  "build:prod": "webpack --mode production"
+
+// ? create folders
+
+  docs
+  src
+    assets
+    components
+      App.jsx
+    env 
+    pages 
+    routes 
+    styles
+      css
+        index.scss
+      fonts
+  index.jsx
 
 // ? Code in your App.jsx
 
-import React from 'react';
+  import React from 'react';
 
-const App = () => {
-  return (
-    <div>
-      <h1> Final </h1>
-    </div>
-  );
-}
+  /**
+  * {{{! this is for documention}}}
+  * @returns {React.Component} Main component of our App 
+  */
 
-export default App;
+  const App = () => {
+    return (
+      <div>
+        <h1> Final </h1>
+      </div>
+    );
+  }
+
+  export default App;
+
 
 // ? Code in your index.jsx
 
-import React from "react";
-import ReactDOM  from "react-dom";
+  // Imports from React
+  import React from 'react';
+  import ReactDOM from 'react-dom/client';
 
-import { Provider } from 'react-redux';
+  // Imports from Redux
+  // import { Provider } from 'react-redux';
 
-import App from './components/app';
+  // Import style sheets
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/index.scss';
+  import App from './components/App';
+  import 'bootstrap/dist/css/bootstrap.min.css'
+  import './styles/css/index.scss'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App/>
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+
+  // ToDo If we work with redux, create store and apply middlgeware from redux saga
+
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+  )
 
 // ? npm run docs:build
+  use /** for adding new stuff on documentation 
+
+// ? npm run build 
+  it will create dist folders 
+
+// ? create .gitignore file
+
+  # See https://help.github.com/articles/ignoring-files for more about ignoring files.
+
+  # dependencies
+  /node_modules
+  /.pnp
+  .pnp.js
+
+  # testing
+  /coverage
+
+  # production
+  /dist 
+
+  # misc
+
+  .DS_Store
+  .env.local
+  .env.development.local
+  .env.test.local
+  .env.production.local
+
+  npm-debug.log*
+  yarn-debug.log*
+  yarn-error.log*
+
+// ? npm deploy:dev
+  it will run the webpack 
